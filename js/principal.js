@@ -22,3 +22,8 @@ for (let index = 0; index < pacientes.length; index++) {
     tdImc.textContent = imc.toFixed(2);
   }
 }
+
+var btnAdicionar = document.querySelector("#adicionar-paciente");
+btnAdicionar.addEventListener("click", function(){
+  alert("opa")
+})
