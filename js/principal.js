@@ -15,7 +15,6 @@ if ((peso < 0 || peso > 200) || (altura < 0 || altura >= 3)) {
     tdImc.textContent = "Dados inválidos"
 } else {
     var imc = peso / (altura * altura);
-
     tdImc.textContent = imc;
 }
 
