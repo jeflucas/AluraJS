@@ -24,6 +24,7 @@ for (let index = 0; index < pacientes.length; index++) {
 }
 
 var btnAdicionar = document.querySelector("#adicionar-paciente");
-btnAdicionar.addEventListener("click", function(){
-  alert("opa")
-})
+btnAdicionar.addEventListener("click", function (event) {
+  event.preventDefault();
+  alert("opa");
+});
