@@ -26,5 +26,10 @@ for (let index = 0; index < pacientes.length; index++) {
 var btnAdicionar = document.querySelector("#adicionar-paciente");
 btnAdicionar.addEventListener("click", function (event) {
   event.preventDefault();
-  alert("opa");
+
+  var form = document.querySelector("#form-adiciona");
+  var nome = form.nome.value;
+  var peso = form.peso.value;
+  var altura = form.altura.value;
+  var gordura = form.gordura.value;
 });
