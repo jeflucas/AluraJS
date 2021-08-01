@@ -16,6 +16,7 @@ for (let index = 0; index < pacientes.length; index++) {
 
   if (peso < 0 || peso > 200 || altura < 0 || altura >= 3) {
     tdImc.textContent = "Dados inválidos";
+    paciente.classList.add("paciente-invalido");
   } else {
     var imc = peso / (altura * altura);
     tdImc.textContent = imc.toFixed(2);
