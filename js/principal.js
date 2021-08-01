@@ -41,4 +41,19 @@ btnAdicionar.addEventListener("click", function (event) {
   var gorduraTd = document.createElement("td");
   var imcTd = document.createElement("td");
 
+  nomeTd.textContent = nome;
+  pesoTd.textContent = peso;
+  alturaTd.textContent = altura;
+  gorduraTd.textContent = gordura;
+
+  pacienteTr.appendChild(nomeTd)
+  pacienteTr.appendChild(pesoTd)
+  pacienteTr.appendChild(alturaTd)
+  pacienteTr.appendChild(gorduraTd)
+  pacienteTr.appendChild(imcTd)
+
+  var tabela = document.querySelector("#tabela-pacientes")
+
+  tabela.appendChild(pacienteTr)
+
 });
