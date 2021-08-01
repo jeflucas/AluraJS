@@ -18,6 +18,6 @@ for (let index = 0; index < pacientes.length; index++) {
     tdImc.textContent = "Dados inválidos";
   } else {
     var imc = peso / (altura * altura);
-    tdImc.textContent = imc;
+    tdImc.textContent = imc.toFixed(2);
   }
 }
