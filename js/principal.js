@@ -1,21 +1,23 @@
 var title = document.querySelector(".title");
-title.textContent = "Aparecida Nutrition"
+title.textContent = "Aparecida Nutrition";
 
-var paciente = document.querySelector("#paciente01");
+var pacientes = document.querySelectorAll(".paciente");
 
-var tdPeso = paciente.querySelector(".info-peso");
-var peso = tdPeso.textContent;
+for (let index = 0; index < pacientes.length; index++) {
+  var paciente = pacientes[index];
 
-var tdAltura = paciente.querySelector(".info-altura");
-var altura = tdAltura.textContent;
+  var tdPeso = paciente.querySelector(".info-peso");
+  var peso = tdPeso.textContent;
 
-var tdImc = paciente.querySelector(".info-imc");
+  var tdAltura = paciente.querySelector(".info-altura");
+  var altura = tdAltura.textContent;
 
-if ((peso < 0 || peso > 200) || (altura < 0 || altura >= 3)) {
-    tdImc.textContent = "Dados inválidos"
-} else {
+  var tdImc = paciente.querySelector(".info-imc");
+
+  if (peso < 0 || peso > 200 || altura < 0 || altura >= 3) {
+    tdImc.textContent = "Dados inválidos";
+  } else {
     var imc = peso / (altura * altura);
     tdImc.textContent = imc;
+  }
 }
-
-
