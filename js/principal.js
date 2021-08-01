@@ -3,6 +3,16 @@ title.textContent = "Aparecida Nutrition";
 
 var pacientes = document.querySelectorAll(".paciente");
 
+var calculaImc = function(peso, altura){
+  if (peso < 0 || peso > 200 || altura < 0 || altura >= 3) {
+    tdImc.textContent = "Dados inválidos";
+    paciente.classList.add("paciente-invalido");
+  } else {
+    var imc = peso / (altura * altura);
+    return tdImc.textContent = imc.toFixed(2);
+  }
+}
+
 for (let index = 0; index < pacientes.length; index++) {
   var paciente = pacientes[index];
 
@@ -14,13 +24,7 @@ for (let index = 0; index < pacientes.length; index++) {
 
   var tdImc = paciente.querySelector(".info-imc");
 
-  if (peso < 0 || peso > 200 || altura < 0 || altura >= 3) {
-    tdImc.textContent = "Dados inválidos";
-    paciente.classList.add("paciente-invalido");
-  } else {
-    var imc = peso / (altura * altura);
-    tdImc.textContent = imc.toFixed(2);
-  }
+  calculaImc(peso, altura)
 }
 
 var btnAdicionar = document.querySelector("#adicionar-paciente");
@@ -45,6 +49,7 @@ btnAdicionar.addEventListener("click", function (event) {
   pesoTd.textContent = peso;
   alturaTd.textContent = altura;
   gorduraTd.textContent = gordura;
+  imcTd.textContent = calculaImc(peso, altura);
 
   pacienteTr.appendChild(nomeTd)
   pacienteTr.appendChild(pesoTd)
