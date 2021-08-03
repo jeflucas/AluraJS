@@ -7,6 +7,7 @@ btnAdicionar.addEventListener("click", function (event) {
 
   var paciente = getInfoFrom(form);
 
+  
   var pacienteTr = document.createElement("tr");
 
   var nomeTd = document.createElement("td");
@@ -19,7 +20,7 @@ btnAdicionar.addEventListener("click", function (event) {
   pesoTd.textContent = paciente.peso;
   alturaTd.textContent = paciente.altura;
   gorduraTd.textContent = paciente.gordura;
-  imcTd.textContent = calculaImc(paciente.peso, paciente.altura);
+  imcTd.textContent = paciente.imc;
 
   pacienteTr.appendChild(nomeTd);
   pacienteTr.appendChild(pesoTd);
@@ -38,6 +39,7 @@ var getInfoFrom = function (form) {
     peso: form.peso.value,
     altura: form.altura.value,
     gordura: form.gordura.value,
+    imc: calculaImc(form.peso.value, form.altura.value)
   };
 
   return paciente;
