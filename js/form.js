@@ -12,6 +12,9 @@ btnAdicionar.addEventListener("click", function (event) {
   var tabela = document.querySelector("#tabela-pacientes");
 
   tabela.appendChild(pacienteTr);
+
+  validaAltura(paciente.altura)
+  validaPeso(paciente.peso)
 });
 
 function getInfoFrom(form) {
@@ -22,7 +25,7 @@ function getInfoFrom(form) {
     gordura: form.gordura.value,
     imc: calculaImc(form.peso.value, form.altura.value),
   };
-
+  
   return paciente;
 }
 
