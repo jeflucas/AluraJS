@@ -5,7 +5,7 @@ btnAdicionar.addEventListener("click", function (event) {
 
   var form = document.querySelector("#form-adiciona");
 
-  var paciente = getInfo(form);
+  var paciente = getInfoFrom(form);
 
   var pacienteTr = document.createElement("tr");
 
@@ -32,7 +32,7 @@ btnAdicionar.addEventListener("click", function (event) {
   tabela.appendChild(pacienteTr);
 });
 
-var getInfo = function (form) {
+var getInfoFrom = function (form) {
   var paciente = {
     nome: form.nome.value,
     peso: form.peso.value,
