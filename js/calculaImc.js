@@ -9,7 +9,7 @@ var calculaImc = function (peso, altura) {
     paciente.classList.add("paciente-invalido");
   } else {
     var imc = peso / (altura * altura);
-    return (tdImc.textContent = imc.toFixed(2));
+    return (imc.toFixed(2));
   }
 };
 
@@ -23,6 +23,6 @@ for (let index = 0; index < pacientes.length; index++) {
   var altura = tdAltura.textContent;
 
   var tdImc = paciente.querySelector(".info-imc");
+  tdImc.textContent = calculaImc(peso, altura); 
 
-  calculaImc(peso, altura);
 }
